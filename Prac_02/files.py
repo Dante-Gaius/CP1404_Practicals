@@ -1,0 +1,11 @@
+name = input("Enter name:")
+filename = "{}.txt".format(name)
+out_file = open(filename, 'w')
+print("Your name is", name, file=out_file)
+out_file.close()
+
+out_file = open('numbers.txt', 'r')
+number1 = int(out_file.readline())
+number2 = int(out_file.readline())
+print(number1 + number2)
+out_file.close()
