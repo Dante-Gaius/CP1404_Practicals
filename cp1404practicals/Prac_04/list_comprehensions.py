@@ -37,15 +37,10 @@ almost_numbers = ['0', '10', '21', '3', '-7', '88', '9']
 # TODO: use a list comprehension to create a list of integers
 # from the above list of strings
 # numbers =
-numbers = []
-for number in almost_numbers:
-    numbers.append(int(number))
+numbers = [int(number) for number in almost_numbers]
 print(numbers)
 
 # TODO: use a list comprehension to create a list of only the numbers that are
 # greater than 9 from the numbers (not strings) you just created
-numbers_2 = []
-for number in numbers:
-    if number > 9:
-        numbers_2.append(number)
-print(numbers_2)
+numbers_greater_9 = [number for number in numbers if number > 9]
+print(numbers_greater_9)
