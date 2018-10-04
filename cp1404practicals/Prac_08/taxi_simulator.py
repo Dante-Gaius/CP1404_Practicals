@@ -19,11 +19,14 @@ def main():
                 taxi_choice = int(input("Choose taxi: "))
             current_taxi = taxis[taxi_choice]
         elif user_choice == "D":
-            current_taxi.start_fare()
-            drive_distance = int(input("Drive how far? "))
-            current_taxi.drive(drive_distance)
-            bill += current_taxi.get_fare()
-            print("Your {} trip cost you ${:.2f}".format(current_taxi.car_name, current_taxi.get_fare()))
+            if current_taxi is None:
+                print("You must choose a taxi before you can drive")
+            else:
+                current_taxi.start_fare()
+                drive_distance = int(input("Drive how far? "))
+                current_taxi.drive(drive_distance)
+                bill += current_taxi.get_fare()
+                print("Your {} trip cost you ${:.2f}".format(current_taxi.car_name, current_taxi.get_fare()))
         else:
             print("Invalid Menu choice \nChoose a valid menu option")
 
